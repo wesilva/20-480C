@@ -27,27 +27,27 @@
             <form method="post" action="/registration/new" id="registration-form">
                 <div class="field">
                     <label for="first-name">First Name:</label>
-                    <input type="text" id="first-name" name="firstName" />
+                    <input type="text" id="first-name" name="firstName" required autofocus />
                 </div>
                 <div class="field">
                     <label for="last-name">Last Name:</label>
-                    <input type="text" id="last-name" name="lastName" />
+                    <input type="text" id="last-name" name="lastName" required />
                 </div>
                 <div class="field">
                     <label for="email-address">Email Address:</label>
-                    <input type="email" id="email-address" name="emailAddress" />
+                    <input type="email" id="email-address" name="emailAddress" required />
                 </div>
                 <div class="field">
                     <label for="password">Choose a password:</label>
-                    <input type="password" id="password" name="password" />
+                    <input type="password" id="password" name="password" required pattern="[a-zA-Z0-9]{5,}" title="At least 5 characters"/>
                 </div>
                 <div class="field">
                     <label for="confirm-password">Confirm your password:</label>
-                    <input type="password" id="confirm-password" name="confirmPassword" />
+                    <input type="password" id="confirm-password" name="confirmPassword" required />
                 </div>
                 <div class="field">
                     <label for="url">Website/blog:</label>
-                    <input type="url" id="url" name="websiteUrl" />
+                    <input type="url" id="url" placeholder="http://" name="websiteUrl" />
                 </div>
                 <div>
                     <button type="submit">Register</button>
