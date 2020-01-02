@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <title>Contoso Conf - Schedule</title>
     <link rel="stylesheet" href="styles/site.css" type="text/css" />
+    <link rel="stylesheet" href="styles/pages/schedule.css" type="text/css" />
 </head>
 <body>
     <nav>
@@ -19,13 +20,12 @@
             <h1>ContosoConf</h1>
             <p>A two-track conference on the latest HTML5 developments</p>
         </header>
-        <section>
-            <input type="checkbox" name="show-track-1" checked id="show-track-1" /> Track 1
-            <input type="checkbox" name="show-track-2" checked id="show-track-2" /> Track 2
-        </section>
         <section class="page-section schedule">
             <div class="container">
                 <h1>Schedule</h1>
+                Show:
+                <input type="checkbox" name="show-track-1" checked="checked" id="show-track-1" /> <label for="show-track-1">Track 1</label>
+                <input type="checkbox" name="show-track-2" checked="checked" id="show-track-2" /> <label for="show-track-2">Track 2</label>
                 <ul id="schedule"></ul>
             </div>
         </section>

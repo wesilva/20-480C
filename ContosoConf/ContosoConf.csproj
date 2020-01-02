@@ -144,7 +144,9 @@
     <Content Include="scripts\pages\register.js" />
     <Content Include="scripts\pages\schedule.js" />
     <Content Include="shedule.html" />
+    <Content Include="styles\images\stars.png" />
     <Content Include="styles\pages\register.css" />
+    <Content Include="styles\pages\schedule.css" />
     <Content Include="styles\site.css" />
     <Content Include="Web.config" />
   </ItemGroup>

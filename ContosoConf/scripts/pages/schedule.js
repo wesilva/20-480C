@@ -1,93 +1,46 @@
-﻿const schedule = [
-    {
-        "id": "session-1",
-        "title": "Registration",
-        "tracks": [1, 2]
-    },
-    {
-        "id": "session-2",
-        "title": "Moving the Web forward with HTML5",
-        "tracks": [1, 2]
-    },
-    {
-        "id": "session-3",
-        "title": "Diving in at the deep end with Canvas",
-        "tracks": [1]
-    },
-    {
-        "id": "session-4",
-        "title": "New Technologies in Enterprise",
-        "tracks": [2]
-    },
-    {
-        "id": "session-5",
-        "title": "WebSockets and You",
-        "tracks": [1]
-    },
-    {
-        "id": "session-6",
-        "title": "Coffee and Cake Break",
-        "tracks": [1, 2]
-    },
-    {
-        "id": "session-7",
-        "title": "Building Responsive UIs",
-        "tracks": [1]
-    },
-    {
-        "id": "session-8",
-        "title": "Fun with Forms (no, really!)",
-        "tracks": [2]
-    },
-    {
-        "id": "session-9",
-        "title": "A Fresh Look at Layouts",
-        "tracks": [1]
-    },
-    {
-        "id": "session-10",
-        "title": "Real-world Applications of HTML5 APIs",
-        "tracks": [2]
-    },
-    {
-        "id": "session-11",
-        "title": "Lunch",
-        "tracks": [1, 2]
-    },
-    {
-        "id": "session-12",
-        "title": "Getting to Grips with JavaScript",
-        "tracks": [1]
-    },
-    {
-        "id": "session-13",
-        "title": "Transforms and Animations",
-        "tracks": [2]
-    },
-    {
-        "id": "session-14",
-        "title": "Web Design Adventures with CSS3",
-        "tracks": [1]
-    },
-    {
-        "id": "session-15",
-        "title": "Introducing Data Access and Caching",
-        "tracks": [2]
-    },
-    {
-        "id": "session-16",
-        "title": "Closing Thanks and Prizes",
-        "tracks": [1, 2]
-    }
-];
+﻿let schedule = [];
 
 const list = document.getElementById('schedule');
 const track1Checkbox = document.getElementById('show-track-1');
 const track2Checkbox = document.getElementById('show-track-2');
 
+function downloadSchedule() {
+    const request = new XMLHttpRequest();
+    request.open("GET", "/schedule/list", true);
+    // onreadystatechange é chamado sempre que o atributo readyState é modificado.
+    // request.onload é chamdo quando a operação esta completa (sucesso ou erro) readyState == 4
+    request.onreadystatechange = function () {
+        if (request.readyState === 4) {
+            try {
+                const response = JSON.parse(request.responseText);
+                if (request.status === 200) {
+                    schedule = response.schedule;
+                    displaySchedule();
+                } else {
+                    alert(response.message);
+                }
+            } catch (exception) {
+                alert("Schedule list not available.");
+            }
+        }
+    };
+    request.send();
+};
+
 function createSessionElement(session) {
     const li = document.createElement('li');
-    li.textContent = session.title;
+    li.sessionId = session.id;
+
+    const star = document.createElement('a');
+    star.setAttribute('href', '#');
+    star.setAttribute('class', 'star');
+    star.addEventListener('click', handleListClick, false);
+    li.appendChild(star);
+
+    const title = document.createElement('span');
+    title.textContent = session.title;
+    li.appendChild(title);
+
     return li;
 }
 
@@ -110,6 +63,39 @@ function clearList() {
     }
 }
 
+function saveStar(sessionId, isStarred) {
+    const request = new XMLHttpRequest();
+    request.open('POST', `/schedule/star/${sessionId}`, true);
+    request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    if (isStarred) {
+        request.onload = function () {
+            if (request.status === 200) {
+                const response = JSON.parse(request.responseText);
+                if (response.starCount > 50) {
+                    alert("This session is very popular! Be sure to arrive early to get a seat.");
+                }
+            };
+        }
+        request.send(`starred=${isStarred}`);
+    }
+}
+
+function handleListClick(event) {
+    const isStarElement = event.srcElement.classList.contains("star");
+    if (isStarElement) {
+        event.preventDefault();
+
+        const li = event.srcElement.parentNode;
+        if (li.classList.contains("starred")) {
+            li.classList.remove("starred");
+            saveStar(li.sessionId, false);
+        } else {
+            li.classList.add("starred");
+            saveStar(li.sessionId, true);
+        }
+    }
+};
+
 track1Checkbox.addEventListener('click', displaySchedule, false);
 track2Checkbox.addEventListener('click', displaySchedule, false);
-displaySchedule();
+downloadSchedule();
