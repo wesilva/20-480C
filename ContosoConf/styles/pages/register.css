@@ -21,3 +21,8 @@
 .register button {
     padding: .5rem;
 }
+
+.register form.submission-attempted input:invalid {
+    background-color: #f9b2b2;
+    outline: none;
+}
