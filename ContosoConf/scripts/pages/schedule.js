@@ -157,4 +157,6 @@ const handleListClick = (event) => {
 
 track1Checkbox.addEventListener('click', displaySchedule, false);
 track2Checkbox.addEventListener('click', displaySchedule, false);
-downloadSchedule();
+document.addEventListener('DOMContentLoaded', function () {
+    downloadSchedule();
+});
