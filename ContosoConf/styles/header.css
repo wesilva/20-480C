@@ -21,13 +21,46 @@ header.page-header {
     }
 
     header.page-header .register {
+        display: block;
+        position: absolute;
+        height: 10rem;
+        width: 16rem;
+        right: 3.5rem;
+        top: 2rem;
+        padding-top: 6rem;
+        font-size: 2.7rem;
+        text-transform: uppercase;
+        text-align: center;
+        text-decoration: none;
+        text-shadow: 0 1px 0 black;
+        color: white;
+        background: -ms-linear-gradient(#a80000, #740404);
+        background: linear-gradient(#a80000, #740404);
+
+        -ms-border-radius: 100%;
+        border-radius: 100%;
+
+        -ms-transform: rotate(6deg);
+        transform: rotate(6deg);
     }
 
-   header.page-header .register:hover {
-   }
+        header.page-header .register:hover {
+            background: -ms-linear-gradient(#bc0101, #8c0909);
+            background: linear-gradient(#bc0101, #8c0909);
+        }
 
-   header.page-header .register:before {
-   }
+        header.page-header .register:before {
+            display: block;
+            position: absolute;
+            top: -.7rem;
+            right: -.7rem;
+            height: 16.8rem;
+            width: 16.8rem;
+            content: "";
+            border: 3px dotted #740404;
+            -ms-border-radius: 100%;
+            border-radius: 100%;
+        }
 
    header.page-header .register .free {
        font-size: 80%;
