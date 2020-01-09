@@ -3,24 +3,28 @@
 <head>
     <meta charset="utf-8" />
     <title>Contoso Conf - Schedule</title>
+    <link rel="stylesheet" href="styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="styles/site.css" type="text/css" />
+    <link rel="stylesheet" href="styles/footer.css" type="text/css" />
     <link rel="stylesheet" href="styles/pages/schedule.css" type="text/css" />
 </head>
 <body>
-    <nav>
+    <nav class="page-nav">
         <div class="container">
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
-            <a href="shedule.html">Schedule</a>
+            <a href="shedule.html" class="active">Schedule</a>
             <a href="register.html">Register</a>
         </div>
     </nav>
-    <div class="container">
-        <header>
+    <header class="page-header">
+        <div class="container">
             <h1>ContosoConf</h1>
-            <p>A two-track conference on the latest HTML5 developments</p>
-        </header>
-        <section class="page-section schedule">
+            <p class="tag-line">A two-track conference on the latest HTML5 developments</p>
+        </div>
+    </header>
+    <section class="page-section schedule">
+        <div class="container">
             <div class="container">
                 <h1>Schedule</h1>
                 Show:
@@ -28,8 +32,10 @@
                 <input type="checkbox" name="show-track-2" checked="checked" id="show-track-2" /> <label for="show-track-2">Track 2</label>
                 <ul id="schedule"></ul>
             </div>
-        </section>
-        <footer>
+        </div>
+    </section>
+    <footer class="page-footer">
+        <div class="container">
             <p>Hosted by Contoso</p>
             <address>
                 Conference Center <br />
@@ -38,8 +44,8 @@
                 WA 98999
             </address>
             <p>© 2019 Contoso</p>
-        </footer>
-    </div>
+        </div>
+    </footer>
     <script type="text/javascript" src="scripts/pages/schedule.js"></script>
 </body>
 </html>

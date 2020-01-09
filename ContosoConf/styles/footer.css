@@ -1,0 +1,15 @@
+﻿footer.page-footer {
+    background-color: #333;
+    color: #fff;
+    font-size: 1.4rem;
+    height: 18rem;
+}
+
+    footer.page-footer .container {
+        padding: 1rem;
+    }
+
+section.page-section {
+    min-height: -webkit-calc(100% - 46.6rem);
+    min-height: calc(100% - 46.6rem);
+}

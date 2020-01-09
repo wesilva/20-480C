@@ -3,11 +3,19 @@ html {
     font-size: 62.5%;
     font-family: Calibri, Arial, sans-serif;
     background-color: #eaeefa;
+    height: 100%;
 }
 
 body {
+    height: 100%;
     margin: 0;
     font-size: 1.8rem;
+}
+
+input, button {
+    margin: 0;
+    font-size: 1.8rem;
+    font-family: Calibri, Arial, sans-serif;
 }
 
 .container {
@@ -16,15 +24,8 @@ body {
     margin: 0 auto;
 }
 
-nav {
-    background-color: #1d1d1d;
-    line-height: 6rem;
-    font-size: 1.7rem;
-}
-
-nav a {
-    color: #fff;
-    padding: 1rem;
+section.page-section .container {
+    padding-bottom: 2rem;
 }
 
 h1 {

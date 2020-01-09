@@ -3,16 +3,18 @@
 <head>
     <meta charset="utf-8" />
     <title>Contoso Conf - Register</title>
+    <link rel="stylesheet" href="styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="styles/site.css" type="text/css" />
-    <link rel="stylesheet" href="styles/pages/register.css" type="text/css"/>
+    <link rel="stylesheet" href="styles/footer.css" type="text/css" />
+    <link rel="stylesheet" href="styles/pages/register.css" type="text/css" />
 </head>
 <body>
-    <nav>
+    <nav class="page-nav">
         <div class="container">
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
             <a href="shedule.html">Schedule</a>
-            <a href="register.html">Register</a>
+            <a href="register.html" class="active">Register</a>
         </div>
     </nav>
     <header class="page-header">
@@ -21,8 +23,8 @@
             <p class="tag-line">A two-track conference on the latest HTML5 developments</p>
         </div>
     </header>
-    <div class="container">
-        <section class="page-section register">
+    <section class="page-section register">
+        <div class="container">
             <h1>Register for the conference</h1>
             <form method="post" action="/registration/new" id="registration-form">
                 <div class="field">
@@ -39,7 +41,7 @@
                 </div>
                 <div class="field">
                     <label for="password">Choose a password:</label>
-                    <input type="password" id="password" name="password" required pattern="[a-zA-Z0-9]{5,}" title="At least 5 letters and numbers"/>
+                    <input type="password" id="password" name="password" required pattern="[a-zA-Z0-9]{5,}" title="At least 5 letters and numbers" />
                 </div>
                 <div class="field">
                     <label for="confirm-password">Confirm your password:</label>
@@ -53,9 +55,11 @@
                     <button type="submit">Register</button>
                 </div>
             </form>
-        </section>
+        </div>
+    </section>
 
-        <footer>
+    <footer class="page-footer">
+        <div class="container">
             <p>Hosted by Contoso</p>
             <address>
                 Conference Center <br />
@@ -64,8 +68,8 @@
                 WA 98999
             </address>
             <p>© 2019 Contoso</p>
-        </footer>
-    </div>
+        </div>
+    </footer>
     <script src="scripts/pages/register.js" type="text/javascript"></script>
 </body>
 </html>
