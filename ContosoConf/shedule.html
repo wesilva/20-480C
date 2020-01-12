@@ -28,9 +28,9 @@
         <div class="container">
             <div class="container">
                 <h1>Schedule</h1>
-                Show:
+                <!--Show:
                 <input type="checkbox" name="show-track-1" checked="checked" id="show-track-1" /> <label for="show-track-1">Track 1</label>
-                <input type="checkbox" name="show-track-2" checked="checked" id="show-track-2" /> <label for="show-track-2">Track 2</label>
+                <input type="checkbox" name="show-track-2" checked="checked" id="show-track-2" /> <label for="show-track-2">Track 2</label>-->
                 <ul id="schedule"></ul>
             </div>
         </div>
@@ -47,6 +47,15 @@
             <p>© 2019 Contoso</p>
         </div>
     </footer>
-    <script type="text/javascript" src="scripts/pages/schedule.js"></script>
+
+    <script id="schedule-item" type="text/x-template">
+        <li class="schedule-item">
+            <span data-bind="title"></span>
+            <div class="star"></div>
+            <div class="star-count" data-bind="starCount"></div>
+        </li>
+    </script>
+
+    <script type="module" src="scripts/pages/schedule.js"></script>
 </body>
 </html>

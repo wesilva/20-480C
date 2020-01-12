@@ -141,8 +141,13 @@
     <Content Include="index.html" />
     <Content Include="register.html" />
     <Content Include="registered.html" />
+    <Content Include="scripts\datetime.js" />
+    <Content Include="scripts\HtmlTemplate.js" />
+    <Content Include="scripts\LocalStarStorage.js" />
     <Content Include="scripts\pages\register.js" />
     <Content Include="scripts\pages\schedule.js" />
+    <Content Include="scripts\ScheduleItem.js" />
+    <Content Include="scripts\ScheduleList.js" />
     <Content Include="shedule.html" />
     <Content Include="styles\footer.css" />
     <Content Include="styles\header.css" />
